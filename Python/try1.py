@@ -79,7 +79,9 @@ class NeuralNetwork:
 
 
 
-
+def listAverage(lst):
+    return (sum(lst) / len(lst))
+    
 
 input_vectors = np.array(
     [
@@ -102,11 +104,21 @@ neural_network = NeuralNetwork(learning_rate)
 
 worst_error = 0
 best_error = 99999999999
-
+print("Training...")
 training_error = neural_network.train(input_vectors, targets, 10000)
+print("Evaluating...")
 
-ae = training_error
-print(str(ae))
+for i in range(len(training_error)):
+    titem = int(training_error[i])
+    if titem > worst_error:
+        worst_error = titem
+    if titem < best_error:
+        best_error = titem
+print("Neural Network training results:")
+print("Highest error: "+str(worst_error))
+print("Lowest error: "+str(best_error))
+print("Average error: "+str(listAverage(training_error)))
+        
 
 #for
 
