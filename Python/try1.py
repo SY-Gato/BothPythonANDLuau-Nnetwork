@@ -1,5 +1,5 @@
 import numpy as numpy
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 class NeuralNetwork:
     def __init__(self, learning_rate):
@@ -101,11 +101,14 @@ learning_rate = 0.1
 neural_network = NeuralNetwork(learning_rate)
 
 worst_error = 0
-best_error = 999999999
+best_error = 99999999999
 
 training_error = neural_network.train(input_vectors, targets, 10000)
 
-for
+ae = training_error
+print(str(ae))
+
+#for
 
 #plt.plot(training_error)
 #In [53]: plt.xlabel("Iterations")
